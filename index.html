@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>San Diego Top Spots</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: tailwind.colors.sky,
+            },
+          },
+        },
+      };
+    </script>
 </head>
 
-<body>
-    <!-- Write your markup here -->
+<body class="min-h-screen bg-sky-950 text-sky-100">
+    <main class="mx-auto max-w-6xl px-4 py-10">
+        <header class="mb-8 p-4">
+            <div class="text-center">
+                <h1 class="text-3xl font-bold tracking-tight">San Diego <span class="text-sky-400">Top Spots</span></h1>
+            </div>
+        </header>
 
-    <!-- Don't forget to add your <script> tag here -->
+        <section class="rounded-2xl bg-sky-900/60 shadow-xl ring-1 ring-white/10">
+            <div class="border-b border-white/10 p-4">
+                <div class="text-center">
+                    <h2 class="text-lg font-semibold text-sky-100">Locations</h2>
+                    <p class="text-sm text-sky-400">Click “Open in Maps” to view the spot.</p>
+                </div>
+                <div id="status" class="text-center text-sm text-sky-400">Loading spots...</div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table id="spots-table" class="min-w-full text-left">
+                    <thead class="sticky top-0 bg-sky-900/90 backdrop-blur">
+                        <tr class="text-xs font-semibold uppercase tracking-wider text-sky-300">
+                            <th class="px-4 py-3">Name</th>
+                            <th class="px-4 py-3">Description</th>
+                            <th class="px-4 py-3">Link</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="spots-tbody" class="divide-y divide-white/25"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="text-center mt-8 text-sm text-sky-500">
+            Tomatos are not fruits.
+        </footer>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
